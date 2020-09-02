@@ -6,7 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+ExerciseLog.destroy_all
+Lifter.destroy_all
+Exercise.destroy_all
+
+
 Lifter.create(name: "Josh", age: 25)
 Lifter.create(name: "Adam", age: 30)
 Exercise.create(name: "Closegrip Benchpress", category: "Benchpress")
 Exercise.create(name: "Compeitition Squat", category: "Squat")
+ExerciseLog.create(reps: 5, weight: 500, lifter: Lifter.first, exercise: Exercise.first)
+ExerciseLog.create(reps: 3, weight: 315, lifter: Lifter.second, exercise: Exercise.second)
+ExerciseLog.create(reps: 8, weight: 405, lifter: Lifter.first, exercise: Exercise.second)
