@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get "/lifters", to: "lifters#index"
-  get 
+  get "/exercises", to: "exercises#index"
+  get "/exerciselogs", to: "exerciselogs#index"
 
 
 end
