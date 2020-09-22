@@ -1,0 +1,9 @@
+<%= form_tag exerciselogs_path do %>
+  <label>ExerciseLog Weight:</label><br>
+  <%= text_field_tag :weight %><br>
+
+  <label>ExerciseLog Reps</label><br>
+  <%= text_area_tag :reps %><br>
+
+  <%= submit_tag "Submit ExerciseLog" %>
+<% end %>
