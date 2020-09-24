@@ -1,5 +1,7 @@
 
 
-<% @exercises.each do |exercise| %>
-    <%= exercise.name %> <br/>
-<% end %> 
+
+
+<% @exercises.map do |exercise|%>
+        <li> <%= link_to exercise.name, "/exerciselogs/#{exercise.id}" %></li>
+    <% end %> 
