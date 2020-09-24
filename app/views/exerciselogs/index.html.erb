@@ -2,6 +2,6 @@
  
 <ul>
     <% @exerciselogs.map do |exerciselog|%>
-        <li> <%= link_to exerciselog.weight, "/exerciselogs/#{exerciselog.id}" %></li>
+        <li> <%= link_to exerciselog.exercise.name, "/exerciselogs/#{exerciselog.id}" %></li>
     <% end %> 
 </ul>
