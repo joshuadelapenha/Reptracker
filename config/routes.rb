@@ -14,15 +14,14 @@ Rails.application.routes.draw do
   patch "/exercises/:id", to: "exercises#update"
   delete "/exercises/:id", to: "exercises#destroy"
 
-  resources :exerciselogs, only: [:new, :create]
   
-  # get "/exerciselogs", to: "exerciselogs#index", as: "exerciselogs"
-  # get "/exerciselogs/new", to: "exerciselogs#new", as: "new_exerciselog" 
-  # post "/exerciselogs/", to: "exerciselogs#create"
-  # get "/exerciselogs/:id", to: "exerciselogs#show", as: "exerciselog"
-  # get "/exerciselogs/:id/edit", to: "exerciselogs#edit", as: "edit_exerciselog"
-  # patch "/exerciselogs/:id", to: "exerciselogs#update"
-  # delete "/exerciselogs/:id", to: "exerciselogs#destroy"
+  get "/exerciselogs", to: "exerciselogs#index"
+  get"/exerciselogs/new", to: "exerciselogs#new"
+  post "/exerciselogs/", to: "exerciselogs#create"
+  get "/exerciselogs/:id", to: "exerciselogs#show"
+  get "/exerciselogs/:id/edit", to: "exerciselogs#edit"
+  patch "/exerciselogs/:id", to: "exerciselogs#update"
+  delete "/exerciselogs/:id", to: "exerciselogs#destroy"
 
   get"/lifters/", to: "lifters#index", as: "lifters"
   get"/lifters/new", to: "lifters#new", as: "new_lifter"

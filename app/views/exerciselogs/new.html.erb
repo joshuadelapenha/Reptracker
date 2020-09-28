@@ -3,13 +3,15 @@
 <%= form_for @exerciselog do |f| %>
     <%= f.label :reps %>
     <%= f.number_field :reps %> <br>
-    <%= f.label :weight %>
+
+  <%= f.label :weight %>
     <%= f.number_field :weight %> <br>
-    <%= f.label :lifter_id, "Lifter:" %>
+
+  <%= f.label :lifter_id, "Lifter:" %>
     <%= f.collection_select :lifter_id, @lifters,  :id, :name %> <br>
     
     <%= f.label :exercise_id, "Exercise: " %>
     <%= f.collection_select :exercise_id, @exercises, :id, :name %> <br>
 
-    <%= f.submit "Create it!" %>
+  <%= submit_tag "Submit ExerciseLog" %>
 <% end %>
