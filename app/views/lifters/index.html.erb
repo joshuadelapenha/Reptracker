@@ -1,5 +1,7 @@
 <h1>All Lifters</h1>
 
-<% @lifters.each do |lifter| %>
-    <%= lifter.name %> <br/>
-<% end %> 
+<ul>
+    <% @lifters.map do |lifter|%>
+        <li> <%= link_to lifter.name, "/lifters/#{lifter.id}" %></li>
+    <% end %> 
+</ul>

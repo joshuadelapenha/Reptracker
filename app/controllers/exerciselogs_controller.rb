@@ -1,23 +1,22 @@
 class ExerciselogsController < ApplicationController
-    def index
-        @exerciselogs = ExerciseLog.all
-    end 
-
-    def show
-        @exerciselog = ExerciseLog.find(params[:id])
-    end
+    # def index
+    #     @exerciselogs = ExerciseLog.all
+    # end 
 
     def new
         @exerciselog = ExerciseLog.new
+        @lifters = Lifter.all
+        @exercises = Exercise.all
     end
-    
 
     def create
-        @exerciselog = ExerciseLog.new
-        @exerciselog.reps = params[:reps]
-        @exerciselog.weight = params[:weight]
-        @exerciselog.save
-        redirect_to exerciselog_path(@exerciselog)
+        # byebug
+        exerciselog_params = params.require(:exerciselog).permit(:reps, :weight, :lifter_id, :exercise_id)
+        @exerciselog = ExerciseLog.create(exerciselog_params)
+
+        lifter = Lifter.find(params[:exerciselog][:lifter_id])
+
+        redirect_to lifter_path(lifter)
     end
     
 end
